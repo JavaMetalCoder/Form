@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -5,48 +9,98 @@
 }
 
 :root {
-  --primary: blue;
-  --secondary: white;
-  --text-color: #222;
+  
+  --primary: #004aad;         /* blue deciso, non fluorescente */
+  --primary-dark: #002d72;    /* per hover e ombre */
+  --accent: #00c3ff;          /* blu chiaro per bottoni e dettagli */
+  --bg-light: #ffffff;        /* sfondo */
+  --text-dark: #1e1e1e;       /* testo nero/grigio intenso */
 
-  --space-small: 0.50 em;
-  --space-md: 0.75 em;
-  --space-normal: 1 em;
-  --space-xl: 1.50 em;
+
+  --space-small: 0.50em;
+  --space-md: 0.75em;
+  --space-normal: 1em;
+  --space-xl: 1.50em;
 }
 
 html {
   background-color: var(--secondary);
-  color: var(--text-color);
-  margin: 20px;
-  padding: 20px;
+  color: var(--text-dark);
+  margin: 0.5px;
+  padding: 1px;
+  font-family: "Tagesschrift", system-ui;;
 }
-
+/* HEADER */
 header {
-  position: absolute;
-  top: -1px;
-  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: var(--primary);
   width: 100%;
+  height: 75px;
+  margin-bottom: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0,2);
 }
 
 nav {
   min-width: 10%;
   max-width: 90%;
+  height: 100%;
 }
 
-.nav-list {
+#nav-list {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+#nav-list li {
+  list-style-type: none;
+  
+}
+
+#nav-list li a {
+  text-decoration: none;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+/* MAIN */
+
+main {
+  padding-top: 70px;
+
+}
+
+.hero {
+  background: linear-gradient(to bottom right, var(--primary, var(--primary-dark)));
+  margin: 0 auto;
+  width: 50%;
+  min-height: 90vh;
+  margin: 20px;
+  padding: 2rem;
+  font-size: var(--space-xl);
+  border: solid 4px var(--primary);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0,2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
   align-items: center;
 }
 
-.nav-list li {
-  list-style-type: none;
-}
+ 
 
-.nav-list li a {
-  text-decoration: none;
-}
+
+
+
+/* FOOTER */
+
+/* RESPONSIVE MOBILE */
 
