@@ -5,14 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const formData = {
-      name: document.getElementById("name").value,
-      surname: document.getElementById("surname").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
+      name: document.getElementById("name").value.trim(),
+      surname: document.getElementById("surname").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      message: document.getElementById("message").value.trim()
     };
 
     try {
-      const response = await fetch("http://localhost:3000/contatti", {
+      // URL ASSOLUTO per Live Server
+const response = await fetch("http://localhost:3000/contatti", {
         method: "POST",
         headers: {
           "Content-Type" : "application/json"
