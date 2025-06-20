@@ -1,5 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 * {
@@ -10,8 +12,8 @@
 
 :root {
   
-  --primary: #004aad;         /* blue deciso, non fluorescente */
-  --primary-dark: #002d72;    /* per hover e ombre */
+  --primary: #fff;         /* blue deciso, non fluorescente */
+  --primary-dark: #f9f9f9;    /* per hover e ombre */
   --accent: #00c3ff;          /* blu chiaro per bottoni e dettagli */
   --bg-light: #ffffff;        /* sfondo */
   --text-dark: #1e1e1e;       /* testo nero/grigio intenso */
@@ -24,23 +26,24 @@
 }
 
 html {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: var(--text-dark);
   margin: 0.5px;
   padding: 1px;
-  font-family: "Tagesschrift", system-ui;;
+  font-family: "Montserrat", system-ui;;
 }
 /* HEADER */
 header {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--primary);
+  background-color: var(--primary-dark);
   width: 100%;
   height: 75px;
   margin-bottom: 20px;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0,2);
+  font-size: var(--space-normal);
 }
 
 nav {
@@ -60,13 +63,18 @@ nav {
 
 #nav-list li {
   list-style-type: none;
-  
+  transition: transform 0.4s ease;
 }
 
 #nav-list li a {
   text-decoration: none;
   color: var(--secondary);
   cursor: pointer;
+  
+}
+
+#nav-list li:hover {
+  transform: translateY(-6px);
 }
 
 /* MAIN */
@@ -77,22 +85,133 @@ main {
 }
 
 .hero {
-  background: linear-gradient(to bottom right, var(--primary, var(--primary-dark)));
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
   min-height: 90vh;
   margin: 20px;
   padding: 2rem;
-  font-size: var(--space-xl);
-  border: solid 4px var(--primary);
+  border: solid 4px var(--primary-dark);
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0,2);
-
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: center;
   align-items: center;
+  
+}
+
+.hero-cta {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  font-size: 30px;
+
+
+}
+
+.hero-cta h2 {
+  text-align: center;
+  font-size: 2em;
+
+}
+
+.hero-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  
+
+
+}
+
+#hero-btn {
+  border-radius: 10px;
+  background: linear-gradient(to left, gray, var(--primary));
+  
+  cursor: pointer;
+  transition: transform 0.4s, background-color ease;
+  font-size: 0.75em;
+  padding: 0.75rem 1.5rem;
+  
+}
+
+#hero-btn:hover {
+  background-color: #00c3ff;
+  transform: scale(1.05);
+
+}
+
+.form {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.form-set {
+  border: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-field {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#form-contatore {
+  font-size: 0.9rem;
+  text-align: right;
+  color: #666;
+}
+
+#form-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #0077ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#form-btn:hover {
+  background-color: #005fcc;
 }
 
  
